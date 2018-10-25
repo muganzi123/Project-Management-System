@@ -54,9 +54,7 @@ class ProjectsController extends Controller
                 'company_id'=>$request->input('company_id'),
                 'user_id'=>Auth::user()->id
             ]);
-            if ($project) {
-                return redirect()->route('projects.show',['project'=>$project->id])->with('success','project created succesfully');
-            }
+            flash('Project created succesfully','success');
         }
         return back()->withInput()->with('errors', 'Error creating new project');
     }
@@ -103,9 +101,7 @@ class ProjectsController extends Controller
             'name'=>$request->input('name'),
             'description'=>$request->input('description'),
         ]);
-        if ($projectUpdate) {
-            return redirect()->route('projects.show', ['project'=>$project->id])->with('success','project updated succesfully');
-        }
+        flash('Project Updated succesfully','success');
         //redirect
         return back()->withInput();
     }
@@ -119,10 +115,7 @@ class ProjectsController extends Controller
     {
         //
         $findproject= Project::find($project->id);
-        if ($findproject->delete()) {
-            //redirect
-            return redirect()->route('projects.index')->with('success', 'project deleted Succesfully');
-        }
+        flash('Project deleted succesfully','success');
         return back()->withInput()->with('error', 'project could not be deleted');
     }
 }

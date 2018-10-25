@@ -49,9 +49,8 @@ class CompaniesController extends Controller
                 'description'=>$request->input('description'),
                 'user_id'=>Auth::user()->id
             ]);
-            if ($company) {
-                return redirect()->route('companies.show',['company'=>$company->id])->with('success','Company created succesfully');
-            }
+            flash('Company created succesfully','success');
+            
         }
         return back()->withInput()->with('errors', 'Error creating new company');
     }
@@ -102,9 +101,7 @@ class CompaniesController extends Controller
                 'name'=>$request->input('name'),
                 'description'=>$request->input('description'),
             ]);
-            if ($companyUpdate) {
-                return redirect()->route('companies.show', ['company'=>$company->id])->with('success','Company updated succesfully');
-            }
+             flash('Company created succesfully','success');
             //redirect
             return back()->withInput();
         }
@@ -121,10 +118,7 @@ class CompaniesController extends Controller
         //
         if (Auth::check()) {
             $findCompany= Company::find($company->id);
-            if ($findCompany->delete()) {
-                //redirect
-                return redirect()->route('companies.index')->with('success', 'Company deleted Succesfully');
-            }
+            flash('Company deleted succesfully','success');
             return back()->withInput()->with('error', 'Company could not be deleted');
         }
         return view('auth.login');

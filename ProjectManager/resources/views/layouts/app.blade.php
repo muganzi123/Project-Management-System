@@ -20,5 +20,11 @@
 @stop
 
 @section('js')
+<script src="{{asset('js/datatables.min.js')}}"> </script>
     <script> console.log('Hi!'); </script>
 @stop
+ <div class="container" >
+
+        @include('flash::message')
+        
+         </div>

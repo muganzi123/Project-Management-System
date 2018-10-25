@@ -24,9 +24,9 @@ Route::middleware(['auth'])->group(function(){
 	Route::resource('tasks', 'TasksController');
 	Route::resource('users', 'UsersController');
 	Route::resource('users', 'CommentsController');
-	Route::get('my-datatables', 'MyDatatablesController@index');
-	Route::get('get-data-my-datatables', ['as'=>'get.data','uses'=>'MyDatatablesController@getData']);
-	Route::get('my-datatables', 'MyDatatablesController@index');
-	Route::get('get-data1-my-datatables', ['as'=>'get.data1','uses'=>'MyDatatablesController@getProject']);
+	// Route::get ( '/', function () {
+	// 	$data = Data::all ();
+	// 	return view ( 'welcome' )->withData ( $data );
+	// } );
 	
 });

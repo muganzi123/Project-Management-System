@@ -12,14 +12,14 @@
         <!-- Styles -->
         <style>
             html, body {
-                background-color: #fff;
-                color: blue;
+                background-image: url("/pic.jpg");
+                color: black;
                 font-family: "Times New Roman", Times, serif;
                 font-weight: 200;
                 height: 100vh;
                 margin: 0;
             }
-
+            
             .full-height {
                 height: 100vh;
             }
@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                <marquee direction="left"><center><font size="6" ><p>WELCOME TO PROJECT MANAGEMENT SYSTEM</p></font></center></marquee>
+                <center><font size="6" ><p>WELCOME TO PROJECT MANAGEMENT SYSTEM</p></font></center>
                 </div>
 
                

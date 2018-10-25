@@ -162,6 +162,9 @@ return [
         Caffeinated\Modules\ModulesServiceProvider::class,
         JeroenNoten\LaravelAdminLte\ServiceProvider::class,
         Yajra\Datatables\DatatablesServiceProvider::class,
+        Laracasts\Flash\FlashServiceProvider::class,
+        Spatie\Permission\PermissionServiceProvider::class,
+        
 
         /*
          * Package Service Providers...

@@ -30,7 +30,7 @@
     			id="company-content"
     			name="description" 
 					rows="5"
-					cols="80"
+					cols="10"
     			spellcheck="false"
     			class="form-control autosize-target text-left">{{ $company->description }}</textarea>
 					<br/>
